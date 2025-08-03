@@ -36,7 +36,7 @@ Broasted Bytes is a full-stack web application for a restaurant that:
 - **SQLite3** – Lightweight relational DB
 - **HTML/CSS/JavaScript** – Frontend
 - **Jinja2** – Flask's templating engine
-- **bcrypt** – For password hashing
+- **werkzeug security** – For password hashing
 - **FoxyForm** – Embedded contact form handling
 
 ---
