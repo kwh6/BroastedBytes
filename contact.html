@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Broasted King - Contact Us</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="static/suggested logo 1.jpg" alt="Broasted King Logo"/></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+      
+        {% if username == 'admin' %}
+          <li><a href="admin.html">Admin</a></li>
+        {% endif %}
+      
+        {% if username %}
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">{{ username }} ▼</a>
+            <div class="dropdown-content">
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        {% else %}
+          <li><a href="login.html">Login/Register</a></li>
+        {% endif %}
+      </ul>
+      
+    </nav>
+    <script src="static/script.js"></script>
+    <main>
+      <section id="contact" class="section-contact">
+        <h2>Contact Us</h2>
+        <div style="text-align:center; margin-top: 30px;">
+          <!-- Do not change the code! -->
+          <a id="foxyform_embed_link_983358" href="http://www.foxyform.com/">foxyform</a>
+          <script type="text/javascript">
+          (function(d, t){
+             var g = d.createElement(t),
+                 s = d.getElementsByTagName(t)[0];
+             g.src = "https://www.foxyform.com/js.php?id=983358&sec_hash=ca32d764ab4&width=350px";
+             s.parentNode.insertBefore(g, s);
+          }(document, "script"));
+          </script>
+          <!-- Do not change the code! -->
+        </div>
+        </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Broasted King. All rights reserved.</p>
+    </footer>
+  </div>
+  
+
+</body>
+</html>

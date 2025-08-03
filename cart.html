@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="static/suggested logo 1.jpg" alt="Broasted King Logo"/></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+      
+        {% if username == 'admin' %}
+          <li><a href="admin.html">Admin</a></li>
+        {% endif %}
+      
+        {% if username %}
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">{{ username }} ▼</a>
+            <div class="dropdown-content">
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        {% else %}
+          <li><a href="login.html">Login/Register</a></li>
+        {% endif %}
+      </ul>
+      
+    </nav>
+
+    <main>
+      <section class="section-cart">
+        <h2>Your Cart</h2>
+        {% if items %}
+        <div class="cart-grid">
+          {% for item in items %}
+            <div class="cart-item-row">
+              <img src="static/{{ image_map[item['item']] }}" alt="{{ item['item'] }}">
+              <div class="cart-item-info">
+                <h3>{{ item['item'] }}</h3>
+                <p>Amount: 1</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>        
+          <form action="/buy" method="POST">
+            <button type="submit" class="buy-button">Buy Now</button>
+          </form>
+        {% else %}
+          <p>Your cart is empty.</p>
+        {% endif %}
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Broasted King. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="static/script.js"></script>
+</body>
+</html>

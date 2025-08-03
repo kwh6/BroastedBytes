@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Broasted King - Menu</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="static/suggested logo 1.jpg" alt="Broasted King Logo"/></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+      
+        {% if username == 'admin' %}
+          <li><a href="admin.html">Admin</a></li>
+        {% endif %}
+      
+        {% if username %}
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">{{ username }} ▼</a>
+            <div class="dropdown-content">
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        {% else %}
+          <li><a href="login.html">Login/Register</a></li>
+        {% endif %}
+      </ul>
+      
+    </nav>
+
+    <main>
+      <section class="section-login">
+        <h2>Register</h2>
+        <form class="contact-form" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Choose a username">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+
+          <label for="adress">Address:</label>
+          <input type="text" id="adress" name="adress" placeholder="Enter your address (e.g., BUE)" />
+
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Create a password">
+
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" style="margin-bottom: 16px;">
+
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Broasted King. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="static/script.js"></script>
+
+</body>
+</html>

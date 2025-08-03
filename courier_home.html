@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courier Orders</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="courier_home.html"><img src="static/suggested logo 1.jpg" alt="Broasted King Logo"/></a>
+      </div>
+      <ul class="nav-links">
+        {% if username %}
+          <li class="dropdown">
+            <a href="#" class="dropbtn">{{ username }} ▼</a>
+            <div class="dropdown-content">
+              <a href="/logout">Logout</a>
+            </div>
+          </li>
+        {% else %}
+          <li><a href="login.html">Login/Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+      <section class="section-orders">
+        <h2>Orders to Deliver</h2>
+        {% if orders %}
+          {% for order in orders %}
+            <div class="order-card">
+              <h3>Order #{{ order['id'] }}</h3>
+              <p><strong>Customer:</strong> {{ order['name'] }}</p>
+              <p><strong>Address:</strong> {{ order['adress'] }}</p>
+              <a href="/deliver/{{ order['id'] }}">Delivered</a>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No orders to deliver at the moment.</p>
+        {% endif %}
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Broasted King. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
