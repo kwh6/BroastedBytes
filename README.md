@@ -45,6 +45,6 @@ Broasted Bytes is a full-stack web application for a restaurant that:
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/your-username/broasted-bytes.git
+   git clone https://github.com/kwh6/BroastedBytes
    cd broasted-bytes
    flask run --host=0.0.0.0 --port=5000
